@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Navigation, Phone, Calendar, Clock } from "lucide-react";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 
 export const Contact: React.FC = () => {
   return (
@@ -26,11 +27,12 @@ export const Contact: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             {/* Map Area */}
             <div className="lg:col-span-8 bg-[#1a1a1a] border border-white/10 rounded-xl overflow-hidden relative min-h-100 lg:min-h-150 group cursor-pointer shadow-2xl">
-              <img
+              <ImageWithSkeleton
                 alt="Indore Facility Dark Map"
                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuA71tVJ-c4NBCzlUo3JjTf6k6gJxC__oUbpKPXKJ43ICr8HC4Ul5KE-84Yw4Umf0amOTabcFwTCyMqkTK8RYBqTdtseGRmv9y2hiGuquKdSTNozwuWhMqcI-6Ue1q9Oj2tWH6AF5_rfFlK_yS66tHNfz0rMEDWNcg_HeEa9iqpT4MlfL2f_FEPoWQtCwAxF9tCjcenmBOGGVbJAHH4M1gufKlq3qx97v03btFr7FAZOwOilWrU506eMdw"
                 loading="lazy"
+                wrapperClassName="absolute inset-0"
               />
               <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-transparent to-transparent" />
 

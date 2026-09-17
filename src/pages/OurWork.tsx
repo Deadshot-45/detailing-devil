@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 
 const portfolioItems = [
   {
@@ -100,8 +101,8 @@ export const OurWork: React.FC = () => {
     <div className="min-h-screen bg-[#131313] text-[#e5e2e1] antialiased flex flex-col selection:bg-[#ffb4a8]/30 selection:text-[#ffb4a8] overflow-x-hidden">
       <main className="grow pb-24">
         {/* Hero Section */}
-        <section className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between w-full h-screen">
-          <div className="w-1/2 flex flex-col justify-center">
+        <section className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between w-full h-auto md:h-screen px-6 sm:px-12 md:px-20 pt-32 pb-20 md:pt-0 md:pb-0 gap-8 md:gap-0">
+          <div className="w-full md:w-1/2 flex flex-col justify-center">
             <h1 className="font-montserrat text-5xl sm:text-7xl md:text-[96px] text-white uppercase italic font-extrabold mb-6 tracking-tight leading-[1.05]">
               THE DEVIL&apos;S <br />
               <span className="text-[#ffb4a8]">GARAGE</span>
@@ -110,11 +111,11 @@ export const OurWork: React.FC = () => {
               {heroTitleTwo}
             </p>
           </div>
-          <div className="w-1/2 flex justify-end">
-            <img
+          <div className="w-full md:w-1/2 flex justify-end">
+            <ImageWithSkeleton
               src={heroImg}
               alt={heroTitle}
-              className="w-full h-full object-cover"
+              className="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover"
               loading="lazy"
             />
           </div>
@@ -146,23 +147,27 @@ export const OurWork: React.FC = () => {
             className="relative w-full h-95 sm:h-120 md:h-[60vh] overflow-hidden rounded-xl border border-white/10 bg-[#1a1a1a]/70 backdrop-blur-xl shadow-2xl cursor-ew-resize select-none"
           >
             {/* After Image (Background) */}
-            <div
-              className="absolute inset-0 w-full h-full bg-cover bg-center"
-              style={{
-                backgroundImage:
-                  "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcAcQojd19m3tRH7q4uCm_dg3oU_wuNTCBiu4TcQ8TEVpOS-n1-AscDXYO5Nwu75hKZBDO2Z7Edr-nRB9SQJ8-mAiJHct8mfkdwhqnsFYXyKjOyAfNloF8rtRvzI9fch92Hx10gaWFuTxMBnDwDenjVJe02ZRyGfSuS7yDm6PLrt1osXkjqoWlbolti_AMAdFcCWRaXc3I6o9w47PFi2W1M9Z1FHUoNTkXN7O0gCPv5chb_YastYj3YA')",
-              }}
+            <ImageWithSkeleton
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcAcQojd19m3tRH7q4uCm_dg3oU_wuNTCBiu4TcQ8TEVpOS-n1-AscDXYO5Nwu75hKZBDO2Z7Edr-nRB9SQJ8-mAiJHct8mfkdwhqnsFYXyKjOyAfNloF8rtRvzI9fch92Hx10gaWFuTxMBnDwDenjVJe02ZRyGfSuS7yDm6PLrt1osXkjqoWlbolti_AMAdFcCWRaXc3I6o9w47PFi2W1M9Z1FHUoNTkXN7O0gCPv5chb_YastYj3YA"
+              alt="After paint correction"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+              wrapperClassName="absolute inset-0"
             />
 
             {/* Before Image (Clipped) */}
             <div
-              className="absolute inset-0 w-full h-full bg-cover bg-center pointer-events-none"
+              className="absolute inset-0 w-full h-full pointer-events-none"
               style={{
                 clipPath: `inset(0 ${100 - sliderPercent}% 0 0)`,
-                backgroundImage:
-                  "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnUf_fm3ZbSYjgwaV25vs7NB4smO5plSU1W-W0hqRRKwOFi5p3RMvbMQcyLCsxAlcpmAYP_WWQ8F35ybaHIHBRH5mkrw2i2oDhwqUUnQIERGm02MnBkV-hML7P-wDJdqKUEe2QwisQYMJRRATKVjMQyoxXwSSHF9smyEo27eneO08rXzhgXzSH5Bpu4wDCBGD8bFHedmJUtWJ-I1BdYlOOKK13THueawxEQmBTLCdGD70rZblbT9UTNg')",
               }}
-            />
+            >
+              <ImageWithSkeleton
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnUf_fm3ZbSYjgwaV25vs7NB4smO5plSU1W-W0hqRRKwOFi5p3RMvbMQcyLCsxAlcpmAYP_WWQ8F35ybaHIHBRH5mkrw2i2oDhwqUUnQIERGm02MnBkV-hML7P-wDJdqKUEe2QwisQYMJRRATKVjMQyoxXwSSHF9smyEo27eneO08rXzhgXzSH5Bpu4wDCBGD8bFHedmJUtWJ-I1BdYlOOKK13THueawxEQmBTLCdGD70rZblbT9UTNg"
+                alt="Before paint correction"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                wrapperClassName="absolute inset-0"
+              />
+            </div>
 
             {/* Slider Handle */}
             <div
@@ -206,7 +211,7 @@ export const OurWork: React.FC = () => {
                 className="break-inside-avoid mb-6 rounded-xl border border-white/10 bg-[#1c1b1b] overflow-hidden shadow-xl group transition-transform duration-500 hover:shadow-2xl"
               >
                 <div className="overflow-hidden relative">
-                  <img
+                  <ImageWithSkeleton
                     alt={item.title}
                     src={item.image}
                     className={`w-full h-auto object-cover rounded-t-xl ${item.aspect} transition-transform duration-700 ease-out group-hover:scale-105`}

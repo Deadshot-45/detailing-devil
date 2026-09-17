@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
+import ImageWithSkeleton from "@/components/ImageWithSkeleton"
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -26,13 +27,14 @@ const CardImage = React.forwardRef<HTMLDivElement, CardImageProps>(
   ({ className, src, alt, badgeText, ...props }, ref) => (
     <div ref={ref} className="card-media-wrapper w-full h-56 bg-[#0e0e0e] overflow-hidden relative">
       {src && (
-        <img
+        <ImageWithSkeleton
           src={src}
           alt={alt || "Service preview"}
           className={cn(
             "card-media w-full h-full object-cover object-center",
             className
           )}
+          wrapperClassName="w-full h-full"
           {...props}
         />
       )}

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 import {
   CheckCircle2,
   Check,
@@ -142,7 +143,7 @@ export const Services: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#131313] text-[#e5e2e1] antialiased overflow-x-hidden selection:bg-primary-container selection:text-white flex flex-col">
       {/* Hero Header Section */}
-      <header className="relative pt-32 pb-20 md:pt-48 md:pb-28 px-6 sm:px-12 md:px-20 max-w-360 mx-auto flex flex-col md:flex-row justify-between min-h-screen w-full">
+      <header className="relative pt-32 pb-20 md:pt-48 md:pb-28 px-6 sm:px-12 md:px-20 max-w-360 mx-auto flex flex-col md:flex-row justify-between gap-8 md:gap-0 min-h-0 md:min-h-screen w-full">
         {/* Background Gradient */}
         <div className="absolute inset-0 -z-10 bg-linear-to-t from-[#131313] via-[#131313]/85 to-transparent pointer-events-none" />
 
@@ -153,16 +154,16 @@ export const Services: React.FC = () => {
           <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold text-white mb-6 uppercase tracking-tight leading-[1.1]">
             ENGINEERED FOR PERFECTION
           </h1>
-          <p className="font-inter text-base sm:text-lg text-[#c7c6c6] mb-10 max-w-xl leading-relaxed">
+          <p className="font-inter text-base sm:text-lg text-[#c7c6c6] md:mb-10 max-w-xl leading-relaxed">
             Meticulous detailing services designed to restore, protect, and
             elevate your vehicle to an unmatched level of gloss and durability.
           </p>
         </div>
         <div className="w-full flex justify-end">
-          <img
+          <ImageWithSkeleton
             src={coreServices[1].image}
             alt={coreServices[1].title}
-            className="w-full h-full object-cover"
+            className="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover"
             loading="lazy"
           />
         </div>
@@ -182,11 +183,12 @@ export const Services: React.FC = () => {
             >
               <div>
                 <div className="h-64 overflow-hidden relative">
-                  <img
+                  <ImageWithSkeleton
                     alt={service.title}
                     src={service.image}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     loading="lazy"
+                    wrapperClassName="w-full h-full"
                   />
                 </div>
                 <div className="p-8">

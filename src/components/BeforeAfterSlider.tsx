@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback } from "react";
 import { Sparkles, AlertCircle } from "lucide-react";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -97,10 +98,11 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
       >
         {/* AFTER Image (Base Layer) */}
         <div className="absolute inset-0 w-full h-full">
-          <img
+          <ImageWithSkeleton
             src={afterImage}
             alt={afterLabel}
             className="w-full h-full object-cover pointer-events-none"
+            wrapperClassName="absolute inset-0"
           />
           {/* After Tag */}
           <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#131313]/85 backdrop-blur-md border border-[#d70000]/40 text-[#ffb4a8] font-label-caps text-[10px] tracking-widest shadow-lg">
@@ -114,10 +116,11 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
           className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
-          <img
+          <ImageWithSkeleton
             src={beforeImage}
             alt={beforeLabel}
             className="w-full h-full object-cover"
+            wrapperClassName="absolute inset-0"
           />
           {/* Before Tag */}
           <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#131313]/85 backdrop-blur-md border border-[#5e3f3a] text-[#c7c6c6] font-label-caps text-[10px] tracking-widest shadow-lg">

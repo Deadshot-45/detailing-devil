@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Detailing Devil logo</title>
+  <desc id="desc">Angular red shield with a white double D monogram</desc>
+  <defs>
+    <linearGradient id="red" x1="18" y1="12" x2="78" y2="86" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff4a3d"/>
+      <stop offset="1" stop-color="#9b0000"/>
+    </linearGradient>
+  </defs>
+  <path fill="#0e0e0e" stroke="#ffb4a8" stroke-width="2" d="M48 4 86 18v28c0 22-15 37-38 46C25 83 10 68 10 46V18L48 4Z"/>
+  <path fill="url(#red)" d="m48 11 30 11v24c0 16-10 28-30 36-20-8-30-20-30-36V22l30-11Z"/>
+  <path fill="#fff" d="M29 27h17c10 0 17 6 17 16s-7 16-17 16h-7v10H29V27Zm10 9v14h6c5 0 8-2 8-7s-3-7-8-7h-6Z"/>
+  <path fill="#ffe6e2" d="M52 27h5c10 0 17 6 17 16s-7 16-17 16h-5v-9h4c5 0 8-2 8-7s-3-7-8-7h-4v-9Z"/>
+</svg>

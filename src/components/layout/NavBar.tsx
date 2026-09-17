@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 
 interface NavBarProps {
   onMenuClick?: () => void;
@@ -19,9 +20,9 @@ export const NavBar: React.FC<NavBarProps> = ({ onMenuClick }) => {
       <div className="flex justify-between items-center px-6 sm:px-12 md:px-20 py-6 max-w-360 mx-auto">
         <Link
           to="/"
-          className="font-montserrat text-2xl font-bold tracking-tighter text-white hover:scale-105 transition-transform duration-300 italic uppercase"
+          className="hover:scale-105 transition-transform duration-300"
         >
-          DETAILING DEVIL
+          <BrandLogo />
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">

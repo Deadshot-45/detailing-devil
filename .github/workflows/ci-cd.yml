@@ -9,8 +9,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -31,7 +29,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: "npm"
 
       - name: Install Dependencies
@@ -49,40 +47,3 @@ jobs:
           name: production-build
           path: dist
           retention-days: 7
-
-  # -----------------------------------------------------------
-  # CD: Deploy to GitHub Pages (Runs on push to main/master)
-  # -----------------------------------------------------------
-  deploy-github-pages:
-    name: Deploy to GitHub Pages (CD)
-    needs: build-and-test
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
-    runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Download Build Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: production-build
-          path: dist
-
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4

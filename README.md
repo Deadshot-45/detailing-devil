@@ -1,32 +1,45 @@
-# React + TypeScript + Vite
+# Detailing Devil
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Luxury automotive detailing website for Detailing Devil in Indore, Madhya Pradesh.
 
-Currently, two official plugins are available:
+The site presents detailing services, packages, the Devil's Garage portfolio, the studio process, reviews, and contact information. It uses a dark automotive visual system with red accents, responsive layouts, animated transitions, interactive before-and-after sliders, and a Three.js ambient canvas on the home page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS v4
+- React Router
+- Framer Motion
+- Three.js
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Development
 
-## Expanding the Oxlint configuration
+Install dependencies and start the local server:
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Available checks:
+
+```bash
+npm run lint
+npm run build
+```
+
+## Project Structure
+
+- `src/pages/` contains route-level pages.
+- `src/components/layout/` contains the shared navbar, mobile drawer, and footer.
+- `src/components/ui/` contains reusable UI primitives.
+- `src/components/BrandLogo.tsx` is the shared brand mark used throughout the interface.
+- `public/detailing-devils-logo.svg` is the source logo and favicon.
+
+## Deployment
+
+The project is configured for Vercel. Vercel serves the production site and uses `vercel.json` to route client-side paths back to `index.html`.
+
+GitHub Actions runs linting and the production build on pushes and pull requests through `.github/workflows/ci-cd.yml`.

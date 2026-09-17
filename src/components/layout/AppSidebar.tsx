@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import BrandLogo from "@/components/BrandLogo";
 
 interface AppSidebarProps {
   isOpen: boolean;
@@ -42,14 +43,7 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
             <div>
               {/* Header */}
               <div className="flex items-center justify-between pb-6 border-b border-[#222]">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary-container flex items-center justify-center font-black tracking-tighter text-black rounded text-sm italic">
-                    DD
-                  </div>
-                  <span className="font-heading font-black tracking-wider text-sm text-white">
-                    DETAILING DEVIL
-                  </span>
-                </div>
+                <BrandLogo />
                 <motion.button
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}

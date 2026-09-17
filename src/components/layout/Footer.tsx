@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Flame, Phone, MapPin, Mail } from "lucide-react";
+import { Phone, MapPin, Mail } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 
 export const Footer: React.FC = () => {
   return (
@@ -9,12 +10,7 @@ export const Footer: React.FC = () => {
         {/* Brand Column */}
         <div className="md:col-span-1">
           <div className="flex items-center gap-3 mb-4">
-            <div className="size-8 rounded-lg bg-linear-to-br from-primary-container to-on-primary flex items-center justify-center border border-[#ffb4a8]/30">
-              <Flame className="size-4 text-white" />
-            </div>
-            <span className="font-montserrat font-extrabold text-base tracking-wider text-white">
-              DETAILING <span className="text-[#ffb4a8]">DEVIL</span>
-            </span>
+            <BrandLogo />
           </div>
           <p className="text-xs text-[#8e8d8d] leading-relaxed mb-4">
             Precision automotive conditioning, optical clear coat levelling, and aerospace-grade ceramic coatings engineered for supercar connoisseurs.

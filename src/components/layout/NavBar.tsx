@@ -18,12 +18,7 @@ export const NavBar: React.FC<NavBarProps> = ({ onMenuClick }) => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300">
       <div className="flex justify-between items-center px-6 sm:px-12 md:px-20 py-6 max-w-360 mx-auto">
-        <Link
-          to="/"
-          className="hover:scale-105 transition-transform duration-300"
-        >
-          <BrandLogo />
-        </Link>
+        <BrandLogo className="hover:scale-105 transition-transform duration-300" />
 
         <div className="hidden md:flex items-center space-x-8">
           <NavLink to="/" end className={navLinkClassName}>

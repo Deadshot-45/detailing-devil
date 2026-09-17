@@ -25,7 +25,7 @@
                 </filter>
               </defs>
 
-              <g id="layer3DExtrusion" fill="url(#bezelGradient)" stroke="#090a0d" stroke-width="4" stroke-linejoin="round" transform="translate(4, 7)" filter="url(#extrudeDepth)">
+              <g id="layer3DExtrusion" display="none" fill="url(#bezelGradient)" stroke="#090a0d" stroke-width="4" stroke-linejoin="round" transform="translate(4, 7)" filter="url(#extrudeDepth)">
 
                 <!-- Left D Horn extrusion -->
                 <path d="M 68 114 C 44 80 40 45 60 20 C 64 38 72 58 88 72 C 94 77 98 83 98 94 Z"/>
@@ -88,7 +88,7 @@
               </g>
 
               <!-- Optional Metallic Top Glint Overlayer -->
-              <g id="layerSheen" fill="url(#metalSheen)" opacity="0.3" pointer-events="none">
+              <g id="layerSheen" display="none" fill="url(#metalSheen)" opacity="0.3" pointer-events="none">
                 <rect x="40" y="15" width="1070" height="145"/>
               </g>
             </svg>

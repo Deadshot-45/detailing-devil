@@ -1,14 +1,94 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
-  <title id="title">Detailing Devil logo</title>
-  <desc id="desc">Angular red shield with a white double D monogram</desc>
-  <defs>
-    <linearGradient id="red" x1="18" y1="12" x2="78" y2="86" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ff4a3d"/>
-      <stop offset="1" stop-color="#9b0000"/>
-    </linearGradient>
-  </defs>
-  <path fill="#0e0e0e" stroke="#ffb4a8" stroke-width="2" d="M48 4 86 18v28c0 22-15 37-38 46C25 83 10 68 10 46V18L48 4Z"/>
-  <path fill="url(#red)" d="m48 11 30 11v24c0 16-10 28-30 36-20-8-30-20-30-36V22l30-11Z"/>
-  <path fill="#fff" d="M29 27h17c10 0 17 6 17 16s-7 16-17 16h-7v10H29V27Zm10 9v14h6c5 0 8-2 8-7s-3-7-8-7h-6Z"/>
-  <path fill="#ffe6e2" d="M52 27h5c10 0 17 6 17 16s-7 16-17 16h-5v-9h4c5 0 8-2 8-7s-3-7-8-7h-4v-9Z"/>
-</svg>
+<svg id="detailingDevilsSvg" viewBox="0 0 1150 250" class="w-full h-auto drop-shadow-2xl overflow-visible" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- 3D Extrusion Shadow Filter -->
+                <filter id="extrudeDepth" x="-10%" y="-10%" width="130%" height="140%">
+                  <feDropShadow dx="3" dy="5" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.85"/>
+                </filter>
+
+                <!-- Front Specular Glint Gradient -->
+                <linearGradient id="metalSheen" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+                  <stop offset="40%" stop-color="#ffffff" stop-opacity="0.05"/>
+                  <stop offset="70%" stop-color="#000000" stop-opacity="0.05"/>
+                  <stop offset="100%" stop-color="#000000" stop-opacity="0.35"/>
+                </linearGradient>
+
+                <linearGradient id="bezelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1b1c20"/>
+                  <stop offset="100%" stop-color="#050507"/>
+                </linearGradient>
+
+                <!-- Neon Glow filter -->
+                <filter id="neonRedGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="6" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+              </defs>
+
+              <g id="layer3DExtrusion" fill="url(#bezelGradient)" stroke="#090a0d" stroke-width="4" stroke-linejoin="round" transform="translate(4, 7)" filter="url(#extrudeDepth)">
+
+                <!-- Left D Horn extrusion -->
+                <path d="M 68 114 C 44 80 40 45 60 20 C 64 38 72 58 88 72 C 94 77 98 83 98 94 Z"/>
+
+                <!-- Text "DETAILING" extrusion -->
+                <text x="68" y="152" font-family="'Montserrat', 'Arial Black', sans-serif" font-weight="900" font-size="112" letter-spacing="-2px">
+                  DETAILING
+                </text>
+
+                <!-- Center Devil Icon Base extrusion -->
+                <g transform="translate(605, 110)">
+                  <!-- Head + Horns -->
+                  <path d="M -48 -58 C -58 -84 -50 -102 -38 -108 C -34 -88 -20 -76 -7 -70 C 9 -82 34 -82 50 -70 C 63 -76 77 -88 81 -108 C 93 -102 101 -84 91 -58 C 105 -28 106 2 92 22 C 78 40 50 48 21 48 C -8 48 -36 40 -50 22 C -63 2 -62 -28 -48 -58 Z"/>
+                  <!-- Tail with Forked Arrow -->
+                  <path d="M 21 38 C 70 38 98 68 92 98 C 84 135 15 137 -28 137 L -20 149 L -75 140 L -35 112 L -37 125 C 8 125 70 125 76 98 C 80 73 57 52 21 52 Z"/>
+                </g>
+
+                <!-- Text "DEVILS" extrusion -->
+                <text x="735" y="152" font-family="'Montserrat', 'Arial Black', sans-serif" font-weight="900" font-size="112" letter-spacing="-2px">
+                  DEVILS
+                </text>
+
+                <!-- Right S Horn extrusion -->
+                <path d="M 1122 108 C 1142 82 1148 46 1128 20 C 1122 40 1114 60 1098 74 C 1092 80 1088 86 1088 98 Z"/>
+              </g>
+
+              <g id="layerFrontRed" fill="#e31826" stroke="#b0101c" stroke-width="1.5" stroke-linejoin="round">
+
+                <!-- Left Devil Horn attached to D -->
+                <path id="leftHorn" d="M 68 114 C 44 80 40 45 60 20 C 64 38 72 58 88 72 C 94 77 98 83 98 94 Z"/>
+
+                <!-- Front Lettering: DETAILING -->
+                <text x="68" y="152" font-family="'Montserrat', 'Arial Black', sans-serif" font-weight="900" font-size="112" letter-spacing="-2px">
+                  DETAILING
+                </text>
+
+                <g id="devilCenterMascot" transform="translate(605, 110)">
+                  <!-- Head outer contour + horns -->
+                  <path fill-rule="evenodd" d="&#10;                    M -48 -58 &#10;                    C -58 -84 -50 -102 -38 -108 &#10;                    C -34 -88 -20 -76 -7 -70 &#10;                    C 9 -82 34 -82 50 -70 &#10;                    C 63 -76 77 -88 81 -108 &#10;                    C 93 -102 101 -84 91 -58 &#10;                    C 105 -28 106 2 92 22 &#10;                    C 78 40 50 48 21 48 &#10;                    C -8 48 -36 40 -50 22 &#10;                    C -63 2 -62 -28 -48 -58 Z&#10;                    M -32 -16 &#10;                    C -32 12 -9 30 21 30 &#10;                    C 52 30 75 12 75 -16 &#10;                    C 75 -42 56 -60 21 -60 &#10;                    C -13 -60 -32 -42 -32 -16 Z&#10;                  "/>
+
+                  <!-- Distinctive Devil Tail Swoop with Arrow/Pitchfork point -->
+                  <path d="&#10;                    M 21 36 &#10;                    C 72 36 100 68 94 99 &#10;                    C 86 137 14 139 -30 139 &#10;                    L -22 151 &#10;                    L -78 141 &#10;                    L -37 113 &#10;                    L -39 127 &#10;                    C 8 127 72 127 78 99 &#10;                    C 82 72 58 50 21 50 Z&#10;                  "/>
+
+                  <!-- Stylized Sunglasses / Racing Aviators inside the head -->
+                  <!-- Left Lens -->
+                  <path d="M -16 -24 C -16 -10 -4 0 10 0 C 14 0 17 -3 17 -7 L 17 -26 C 17 -30 10 -32 -3 -32 C -11 -32 -16 -29 -16 -24 Z" fill="#0c0d10" stroke="#b0101c" stroke-width="2"/>
+                  <!-- Right Lens -->
+                  <path d="M 58 -24 C 58 -10 46 0 32 0 C 28 0 25 -3 25 -7 L 25 -26 C 25 -30 32 -32 45 -32 C 53 -32 58 -29 58 -24 Z" fill="#0c0d10" stroke="#b0101c" stroke-width="2"/>
+                  <!-- Bridge -->
+                  <rect x="15" y="-27" width="12" height="4.5" rx="1.5" fill="#e31826"/>
+                </g>
+
+                <!-- Front Lettering: DEVILS -->
+                <text x="735" y="152" font-family="'Montserrat', 'Arial Black', sans-serif" font-weight="900" font-size="112" letter-spacing="-2px">
+                  DEVILS
+                </text>
+
+                <!-- Right Devil Horn attached to S -->
+                <path id="rightHorn" d="M 1122 108 C 1142 82 1148 46 1128 20 C 1122 40 1114 60 1098 74 C 1092 80 1088 86 1088 98 Z"/>
+              </g>
+
+              <!-- Optional Metallic Top Glint Overlayer -->
+              <g id="layerSheen" fill="url(#metalSheen)" opacity="0.3" pointer-events="none">
+                <rect x="40" y="15" width="1070" height="145"/>
+              </g>
+            </svg>

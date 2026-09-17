@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
+import logoUrl from "@/assets/detailing-devils-logo.svg";
 
 interface BrandLogoProps {
   compact?: boolean;
@@ -12,15 +13,13 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
 }) => (
   <span className={cn("inline-flex items-center gap-3", className)}>
     <img
-      src="/detailing-devils-logo.svg"
+      src={logoUrl}
       alt="Detailing Devil"
-      className={compact ? "size-9" : "size-10"}
+      className={cn(
+        "h-auto w-auto max-w-full",
+        compact ? "max-h-8" : "max-h-10",
+      )}
     />
-    {!compact && (
-      <span className="font-montserrat font-extrabold text-base tracking-wider text-white">
-        DETAILING <span className="text-[#ffb4a8]">DEVIL</span>
-      </span>
-    )}
   </span>
 );
 
